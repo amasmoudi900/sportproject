@@ -549,6 +549,11 @@ app.post("/weather", (req, res) => {
     )
 });
 
+// Business Logic : Delete User
+app.delete("/users/:id", (req, res) => {
+    console.log("Here into BL: delete User", req.params.id);
+})
+
 // export app
 // make app importable to other files
 module.exports = app;

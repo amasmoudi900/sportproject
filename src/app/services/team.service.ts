@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class TeamService {
 
+  // address : Express server
   address: string = "http://localhost:3000/teams";
   constructor(private http: HttpClient) { }
 
