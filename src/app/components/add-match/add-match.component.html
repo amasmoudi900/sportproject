@@ -1,0 +1,53 @@
+<app-banner title="Add Match"></app-banner>
+
+
+<div class="site-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7">
+                <form #matchForm="ngForm" (ngSubmit)="addMatch()">
+                    <div class="form-group">
+                        <input type="text" [(ngModel)]="obj.teamOne" name="teamOne" class="form-control"
+                            placeholder="Team One">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" [(ngModel)]="obj.teamTwo" name="teamTwo" class="form-control"
+                            placeholder="Team Two">
+                    </div>
+                    <div class="form-group">
+                        <input type="number" [(ngModel)]="obj.scoreOne" name="scoreOne" class="form-control"
+                            placeholder="Score One">
+                    </div>
+                    <div class="form-group">
+                        <input type="number" [(ngModel)]="obj.scoreTwo" name="scoreTwo" class="form-control"
+                            placeholder="Score Two">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-primary py-3 px-5" value="Add Match">
+                        <!-- <button class="btn btn-primary py-3 px-5">Add Match</button> -->
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-4 ml-auto">
+
+                <ul class="list-unstyled">
+                    <li class="mb-2">
+                        <strong class="text-white d-block">Address</strong>
+                        273 South Riverview Rd. <br> New York, NY 10011
+                    </li>
+                    <li class="mb-2">
+                        <strong class="text-white d-block">Email</strong>
+                        <a href="#">info&#64;unslate.co</a>
+                    </li>
+                    <li class="mb-2">
+                        <strong class="text-white d-block">
+                            Phone
+                        </strong>
+                        <a href="#">+12 345 6789 012</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

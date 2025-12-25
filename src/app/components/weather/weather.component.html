@@ -1,0 +1,56 @@
+<div class="hero overlay" style="background-image: url('images/bg_3.jpg');">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-9 mx-auto text-center">
+                <h1 class="text-white">Search Weather</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="site-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7">
+                <form [formGroup]="weatherForm">
+                    <div class="form-group">
+                        <input type="text" formControlName="city" class="form-control" placeholder="Insert City ...">
+                    </div>
+                    <div *ngIf="weatherForm.controls['city'].invalid && 
+                    (weatherForm.controls['city'].touched || weatherForm.controls['city'].dirty)">
+                        <div *ngIf="weatherForm.controls['city'].errors?.['required']">
+                            City is required
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" (click)="search()" class="btn btn-primary py-3 px-5" value="Search">
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-4 ml-auto">
+
+                <ul class="list-unstyled">
+                    <li class="mb-2">
+                        <strong class="text-white d-block">Temperature</strong>
+                        {{weather.temp}}
+                    </li>
+                    <li class="mb-2">
+                        <strong class="text-white d-block">Wind Speed</strong>
+                        {{weather.speed}}
+                    </li>
+                    <li class="mb-2">
+                        <strong class="text-white d-block">Humidity</strong>
+                        {{weather.humidity}}
+                    </li>
+                    <li class="mb-2">
+                        <strong class="text-white d-block">Pressure</strong>
+                        {{weather.pressure}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

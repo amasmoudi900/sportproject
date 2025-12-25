@@ -1,0 +1,40 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#ID</th>
+            <th scope="col">Score One</th>
+            <th scope="col">Score Two</th>
+            <th scope="col">Team One</th>
+            <th scope="col">Team Two</th>
+            <th scope="col">Result</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let m of matchesTab">
+            <th scope="row">{{m._id}}</th>
+            <td>{{m.scoreOne}}</td>
+            <td>{{m.scoreTwo}}</td>
+            <td>{{m.teamOne}}</td>
+            <td>{{m.teamTwo}}</td>
+            <!-- Sol 1 <td [ngStyle]="{color: scoreColor(m.scoreOne,m.scoreTwo)}">
+                {{m.result}}
+            </td> -->
+            <!--Sol 2 <td>
+                <span *ngIf="m.scoreOne > m.scoreTwo">{{m.teamOne}} is the winner</span>
+                <span *ngIf="m.scoreOne < m.scoreTwo">{{m.teamOne}} is the loser</span>
+                <span *ngIf="m.scoreOne == m.scoreTwo">Draw</span>
+            </td> -->
+            <!-- Sol 3 -->
+            <td>
+                {{resultMsg(m)}}
+            </td>
+
+            <td>
+                <button class="btn btn-info mr-2" (click)="goToInfo(m._id)">Info</button>
+                <button class="btn btn-warning mr-2" (click)="goToEdit(m._id)">Edit</button>
+                <button class="btn btn-danger" (click)="deleteMatch(m._id)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
